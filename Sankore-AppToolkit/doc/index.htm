@@ -1,0 +1,286 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<title>Open-Sankoré API for W3C widgets Documentation</title>
+		<link rel="stylesheet" type="text/css" href="sankoreapi.css" />
+	</head>
+	<body>
+		<h1>Open-Sankoré API for W3C Documentation</h1>
+<pre>
+This documentation describes the Open-Sankoré API. This API is useable in the widgets through the 'sankore' object.
+For more information, have a look at the example widget <b>example.wgt</b>.
+
+Here is an example of the way the method <codeInText>returnStatus</codeInText> is called from the widget:
+</pre>
+		
+<pre class="code">
+function startEditing()
+{
+	sankore.returnStatus("startEditing()", "Ok!");
+}
+</pre>
+		
+<pre>
+This code sample is the declaration of the method <codeInText>Start Edit</codeInText> that can be called from Sankore. This
+method must be declared in the widget and implemented to do the proper action. In this example, this method
+will display the debug message "startEditing():Ok!" in Open-Sankoré.
+</pre>
+		
+		<h2>Open-Sankoré to Widget</h2>
+		<div class="method">
+			<h3>startEditing</h3>
+			<h4>Description</h4>
+			<pre class="description">Put the widget in edit mode. <b>This method isn't implemented yet</b>.</pre>
+		</div>
+		<div class="method">
+			<h3>stopEditing</h3>
+			<h4>Description</h4>
+			<pre class="description">Put the widget in display mode. <b>This method isn't implemented yet</b>.</pre>
+		</div>
+		<div class="method">
+			<h3>initialize</h3>
+			<h4>Description</h4>
+			<pre class="description">Put the widget in a known state (initial state).<b>This method isn't implemented yet</b>.</pre>
+		</div>
+		<div class="method">
+			<h3>checkResponse</h3>
+			<h4>Description</h4>
+			<pre class="description">Ask the widget for its response. <b>This method isn't implemented yet</b>.</pre>
+		</div>
+		<div class="method">
+			<h3>reload</h3>
+			<h4>Description</h4>
+			<pre class="description">Reload the widget. <b>This method isn't implemented yet</b>.</pre>
+		</div>
+		<div class="method">
+			<h3>save</h3>
+			<h4>Description</h4>
+			<pre class="description">Save the widget state. <b>This method isn't implemented yet</b>.</pre>
+		</div>
+		<div class="method">
+			<h3>listMethods</h3>
+			<h4>Description</h4>
+			<pre class="description">Ask the widget which method of the Sankore API are used. This method is used to generate the widget buttons.<b>This method isn't implemented yet</b>.</pre>
+		</div>
+		<h2>Widget to Open-Sankoré</h2>
+		<div class="method">
+			<h3>returnStatus</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[QString] <b>method</b>: the called method.</pre>
+			<pre class="parameter">[QString] <b>status</b>: the actual status.</pre>
+			<h4>Description</h4>
+			<pre class="description">Return the status of the widget. This method is used for debug purpose only.</pre>
+		</div>
+		<div class="method">
+			<h3>usedMethods</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[QStringList] <b>methods</b>: the used API methods list.</pre>
+			<h4>Description</h4>
+			<pre class="description">Return the used API methods of the widget.<b>This method isn't implemented yet</b>.</pre>
+		</div>
+		<div class="method">
+			<h3>response</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[bool] <b>correct</b>: the response state.</pre>
+			<h4>Description</h4>
+			<pre class="description">Return an indication of the rightness of the widget's response.<b>This method isn't implemented yet</b>.</pre>
+		</div>
+		<div class="method">
+			<h3>locale</h3>
+			<h4>Return value</h4>
+			<pre class="parameter">[QString] the actual language used by the Sankore application.</pre>
+			<h4>Description</h4>
+			<pre class="description">Returns the language and eventually the country of this locale as a string of the form "language-country" or only "language" if the country is unknown, where language is a lowercase, two-letter ISO 639 language code, and country is an uppercase, two-letter ISO 3166 country code.</pre>
+		</div>
+		<div class="method">
+			<h3>setTool</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[QString] <b>toolString</b>: the tool name.</pre>
+			<h4>Description</h4>
+			<pre class="description">Set the given tool as the selected one. The available tools are "pen", "marker", "arrow" and "line".</pre>
+		</div>
+		<div class="method">
+			<h3>setPenColor</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[QString] <b>penColor</b>: the new color.</pre>
+			<h4>Description</h4>
+			<pre class="description">Set the current pen color as the given one.</pre>
+		</div>
+		<div class="method">
+			<h3>setMarkerColor</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[QString] <b>markerColor</b>: the new color.</pre>
+			<h4>Description</h4>
+			<pre class="description">Set the current marker color as the given one.</pre>
+		</div>
+		<div class="method">
+			<h3>pageThumbnail</h3>
+			<h4>Return value</h4>
+			<pre class="parameter">[QString] The URL of the given page thumbnail.</pre>
+			<h4>Parameters</h4>
+			<pre class="parameter">[int] <b>pageNumber</b>: the given page number.</pre>
+			<h4>Description</h4>
+			<pre class="description">Return the URL of the given page number thumbnail.</pre>
+		</div>
+		<div class="method">
+			<h3>zoom</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[qreal] <b>factor</b>: the zoom factor.</pre>
+			<pre class="parameter">[qreal] <b>x</b>: the x coordinate of the zoom.</pre>
+			<pre class="parameter">[qreal] <b>y</b>: the y coordinate of the zoom.</pre>
+			<h4>Description</h4>
+			<pre class="description">Zoom the scene at the given point with the given zoom factor.</pre>
+		</div>
+		<div class="method">
+			<h3>move</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[qreal] <b>x</b>: the x coordinate where to move the scene.</pre>
+			<pre class="parameter">[qreal] <b>y</b>: the y coordinate where to move the scene.</pre>
+			<h4>Description</h4>
+			<pre class="description">Performs a hand scroll move to the given position.</pre>
+		</div>
+		<div class="method">
+			<h3>moveTo</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[qreal] <b>x</b>: the x coordinate where to move the scene.</pre>
+			<pre class="parameter">[qreal] <b>y</b>: the y coordinate where to move the scene.</pre>
+			<h4>Description</h4>
+			<pre class="description">Move the scene to the given position.</pre>
+		</div>
+		<div class="method">
+			<h3>drawLineTo</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[qreal] <b>x</b>: the x coordinate.</pre>
+			<pre class="parameter">[qreal] <b>y</b>: the y coordinate.</pre>
+			<pre class="parameter">[qreal] <b>pWidth</b>: the line width.</pre>
+			<h4>Description</h4>
+			<pre class="description">Draw a line to the given coordinate with the given width.</pre>
+		</div>
+		<div class="method">
+			<h3>eraseLineTo</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[qreal] <b>x</b>: the x coordinate.</pre>
+			<pre class="parameter">[qreal] <b>y</b>: the y coordinate.</pre>
+			<pre class="parameter">[qreal] <b>pWidth</b>: the line width.</pre>
+			<h4>Description</h4>
+			<pre class="description">Erase a line to the given position with the given width.</pre>
+		</div>
+		<div class="method">
+			<h3>clear</h3>
+			<h4>Description</h4>
+			<pre class="description">Clear the scene.</pre>
+		</div>
+		<div class="method">
+			<h3>setBackground</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[bool] <b>pIsDark</b>: the dark background flag.</pre>
+			<pre class="parameter">[bool] <b>pIsCrossed</b>: the grid background flag.</pre>
+			<h4>Description</h4>
+			<pre class="description">Set the background related to the given parameters.</pre>
+		</div>
+		<div class="method">
+			<h3>addObject</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[QString] <b>pUrl</b>: the object URL.</pre>
+			<pre class="parameter">[int] <b>width</b>: the width.</pre>
+			<pre class="parameter">[int] <b>height</b>: the height.</pre>
+			<pre class="parameter">[int] <b>x</b>: the x coordinate.</pre>
+			<pre class="parameter">[int] <b>y</b>: the y coordinate.</pre>
+			<pre class="parameter">[bool] <b>background</b>: if this flag is true, the object is set as background.</pre>
+			<h4>Description</h4>
+			<pre class="description">Add the given object to the scene.</pre>
+		</div>
+		<div class="method">
+			<h3>resize</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[qreal] <b>width</b>: the new width.</pre>
+			<pre class="parameter">[qreal] <b>height</b>: the new height.</pre>
+			<h4>Description</h4>
+			<pre class="description">Resize the widget to the given size.</pre>
+		</div>
+		<div class="method">
+			<h3>setPreference</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[QString] <b>key</b>: the preference key.</pre>
+			<pre class="parameter">[QString] <b>value</b>: the preference value.</pre>
+			<h4>Description</h4>
+			<pre class="description">Set preference <b>key</b> to the value defined by <b>value</b>.</pre>
+		</div>
+		<div class="method">
+			<h3>preference</h3>
+			<h4>Return value</h4>
+			<pre class="parameter">[QString] the preference value.</pre>
+			<h4>Parameters</h4>
+			<pre class="parameter">[QString] <b>key</b>: the preference key.</pre>
+			<pre class="parameter">[QString] <b>pDefault</b>: the default value.</pre>
+			<h4>Description</h4>
+			<pre class="description">Return the value of the preference defined by <b>key</b>.</pre>
+		</div>
+		<div class="method">
+			<h3>preferenceKeys</h3>
+			<h4>Return value</h4>
+			<pre class="parameter">[QStringList] the preference keys list value.</pre>
+			<h4>Description</h4>
+			<pre class="description">Return the list of the preference keys.</pre>
+		</div>
+		<div class="method">
+			<h3>showMessage</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[QString] <b>message</b>: the message to show.</pre>
+			<h4>Description</h4>
+			<pre class="description">Return the actual language identifier used by the Sankore application.</pre>
+		</div>		
+		<div class="method">
+			<h3>centerOn</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[qreal] <b>x</b>: the x coordinate.</pre>
+			<pre class="parameter">[qreal] <b>y</b>: the y coordinate.</pre>
+			<h4>Description</h4>
+			<pre class="description">Center the scene on the given point.</pre>
+		</div>
+		<div class="method">
+			<h3>addText</h3>
+			<h4>Parameters</h4>
+			<pre class="parameter">[QString] <b>text</b>: the given text.</pre>
+			<pre class="parameter">[qreal] <b>x</b>: the x coordinate.</pre>
+			<pre class="parameter">[qreal] <b>y</b>: the y coordinate.</pre>
+			<pre class="parameter">[int] <b>height</b>: the font height.</pre>
+			<pre class="parameter">[QString] <b>font</b>: the font family.</pre>
+			<pre class="parameter">[bool] <b>bold</b>: the bold flag.</pre>
+			<pre class="parameter">[bool] <b>italic</b>: the italic flag.</pre>
+			<h4>Description</h4>
+			<pre class="description">Add the given text on the board, at the given position with the given parameters.</pre>
+		</div>
+        <div class="method">
+            <h3>enableDropOnWidget</h3>
+            <h4>Description</h4>
+            <pre class="description">Notify Open-Sankoré that handle the drag and drop of a resource.</pre>
+        </div>
+        <div class="method">
+            <h3>downloadUrl</h3>
+            <h4>Return Value</h4>
+            <pre class="returnValue">Returns a string containg the resource path relative to the widget directory.</pre>
+            <h4>Parameters</h4>
+            <pre class="parameter">[const QString] <b>objectUrl</b>: source url.</pre>
+            <pre class="parameter">[const QString] <b>extension</b>: source extension. (optional)</pre>
+            <h4>Description</h4>
+            <pre class="description">Notify Open-Sankoré that handle the drag and drop of a resource.</pre>
+        </div>
+		<h2>Multilanguage Widget implementation</h2>
+        <pre>Multilanguage is a very important feature. On the sample widget propose a little template suggestion. The only specific Open-Sankoré interaction is the operating system language requested using <codeInText>locale</codeInText>.
+        <pre class="code">
+var lang = "";
+lang = sankore.locale().substr(0,2);
+$("&#60script type='text/javascript' src='js/translation/" + lang + ".js'&#62").appendTo("head");
+if((typeof sankoreLang) == "undefined")
+     $("&#60script type='text/javascript' src='js/translation/en.js'&#62").appendTo("head"); //default translation
+        </pre>
+        </pre>
+        <pre>This code shows how to retrieve the current language with the <codeInText>locale</codeInText> method. After that we look for translation located in the <codeInText>js/translation</codeInText> directory. If the corresponding translation file is found the <codeInText>sankoreLang</codeInText> object is available. After that a simple call of this object allows you to get the translation. Here an example. 
+        </pre>
+        <pre class="code">aTextField.text(sankoreLang.welcome);</pre>
+		<h2>Drag and Drop items on a widget</h2>
+        <pre>Open-Sankoré does not implement a web server for downloading the dropped items on the widget directory. This is done using the Open-Sankoré object <codeInText>sankore</codeInText> and two methods <codeInText>enableDropOnWidget</codeInText> and <codeInText>downloadUrl</codeInText>.</pre>
+        <pre>As soon as you widget is loaded the <codeInText>enableDropOnWidget</codeInText> method could be used to tell Open-Sankoré that your widget accepts the drops. Once a drop is done on a widget you have to call the <codeInText>downloadUrl</codeInText> to store the resource on the widget directory. The call is a sychronous one an return the relative path to the resource.</pre>
+	</body>
+</html>

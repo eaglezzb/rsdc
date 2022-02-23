@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<!-- jQuery -->
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.easing.js"></script>
+<!--
+<script type="text/javascript" src="scripts/jquery-ui-1.8rc3.custom.min.js"></script>
+-->
+<!-- SwipeListener for iPad/iPhone -->
+<!--
+<script type="text/javascript" src="scripts/swipeListener.js"></script>
+-->
+<!-- Uniboard-player -->
+<script type="text/javascript" src="scripts/ubplayer.js"></script>
+<script type="text/javascript" src="scripts/ubplayer.player.js"></script>
+<script type="text/javascript" src="scripts/ubplayer.viewer.js"></script>
+<script type="text/javascript">
+if (typeof console == "undefined") {
+    this.console = {log: function() {}};
+}
+UbPlayer.init('./');
+jQuery(document).ready(function() {
+   var params = location.hash.substring(1).split(",");
+   UbPlayer.launchPlayer(params[0], params[1], params[2], params[3]);
+   });
+</script>
+<link href="stylesheets/master.css" type="text/css" rel="stylesheet" type="text/css" />
+<body id="body">
+<div id="head-embed">
+    <div id="head">
+        <div id="document-links">
+            <ul class="menu-list">
+                <li id="head-list-close"><a id="quitFullscreen" href="javascript:void(0)">Fermer</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="sankorebody">
+        <div id="description">
+            <div id="description-text"></div>
+        </div><!--description-->
+        <div id="boards">
+            <div class="board" id="board-current">
+                <div class='page' id='current-page'>
+                    <img id="page-img" src='images/logo-uniboard.png' />
+                </div>
+            </div>
+        </div><!--boards-->
+        <div class="board-button-unit" id="board-button-previous"></div>
+        <div class="board-button-unit" id="board-button-next"></div>
+        <div id="index"></div>
+   </div>
+ <div id="foot">
+        <div id="foot-inner">
+            <div id="thumbnails">
+                <div id="thumbnails-slider-handler"></div>
+                <div id="thumbnails-slider"><div class="thumbnails-slider-page"></div></div>
+                <div id="thumbnail-previous"></div>
+                <div id="thumbnails-canvas">
+			<div class="thumbnail"><img class="thumb-img" src="" alt="thumbnail" height="100%" width="auto"/></div>
+                </div>
+                <div id="thumbnail-next"></div>
+            </div><!--thumbnails-->
+<div id="playerControls">
+  <ul id="playerControlsinner">
+    <li id="pcleftend"><img id="menu-button-first" src="images/playerleftend.png" /></li> 
+    <li id="pcleft"><img id="menu-button-previous" src="images/playerleft.png" /></li>
+    <li id="pcrightend"><img id="menu-button-next" src="images/playerright.png" /></li>
+    <li id="pcrightend"><img id="menu-button-last" src="images/playerrightend.png" /></li>
+    <li id="pccounter"></li>
+    <li id="pcexpand"><img id="menu-button-full" src="images/playerexpand.png" /></li>
+  </ul><!-- / #playerControlsinner -->
+</div><!-- / #playerControls -->
+    </div><!--foot-inner -->
+    </div><!--foot -->
+    <!-- App Viewer -->
+    <div id="app-viewer-background"></div>
+    <div id="app-viewer">
+        <div id="app-viewer-c"><!-- table -->
+            <div id="app-viewer-appcanvas"><!-- table-cell -->
+                <div id="app-viewer-appborder">
+                    <iframe id="app-viewer-app" src=""></iframe>
+                    <div id="app-viewer-menu">
+                        <div id="app-viewer-button-close-canvas">
+                            <div id="app-viewer-button-close"></div>
+                        </div>
+                        <a href="#" id="app-viewer-close">Fermer</a>
+                    </div>
+                </div><!-- vertical and horizontal centered iframe -->
+            </div>
+        </div>
+    </div>
+    <div id="alert" style="display:none">
+        <div id="alert-background" style="filter:alpha(opacity=0);"></div>
+        <div id="alert-box"></div>
+    </div>
+ </div>
+</div>
+
